@@ -1,0 +1,55 @@
+GDPR - Summary of Key Principles Relevant to AI Systems
+
+This is an original, condensed summary written for internal governance-assessment
+use, focused on the aspects of the General Data Protection Regulation most relevant
+to AI systems. It is NOT a reproduction of the official legal text and should not
+be treated as legal advice.
+
+1. Lawful Basis for Processing
+Personal data may only be processed if there is a valid lawful basis - typically
+consent, contractual necessity, legal obligation, or legitimate interest. An AI
+system that processes personal data (e.g. resumes, customer records) without an
+identifiable lawful basis is operating outside GDPR requirements.
+
+2. Data Minimization
+Only the personal data that is actually necessary for the specified purpose should
+be collected and processed. Sending an entire dataset (e.g. full resumes with all
+fields) to a downstream AI process when only a subset of fields is needed violates
+this principle.
+
+3. Purpose Limitation
+Personal data collected for one purpose (e.g. customer support) should not be
+reused for an unrelated purpose (e.g. marketing profiling) without a new lawful
+basis or the data subject's awareness.
+
+4. Transparency and the Right to Information
+Data subjects have the right to know that their personal data is being processed,
+including when it is shared with third parties (such as an external AI vendor) and
+for what purpose. Silent or undisclosed data sharing with third-party AI providers
+is a common GDPR gap in AI systems.
+
+5. Automated Decision-Making (Article 22)
+Individuals have the right not to be subject to a decision based solely on
+automated processing, including profiling, that produces legal or similarly
+significant effects on them - unless specific conditions are met (e.g. explicit
+consent, contractual necessity with safeguards). Meaningful human review of
+automated decisions is a key safeguard.
+
+6. Data Subject Rights
+Individuals have rights to access their data, request correction, request erasure
+("right to be forgotten"), and object to certain processing. AI systems that
+retain personal data indefinitely without a documented retention policy create
+exposure here.
+
+7. Third-Party Data Sharing and Processor Obligations
+When personal data is shared with an external AI provider (a data processor),
+contractual safeguards (a Data Processing Agreement) and due diligence on that
+provider's own data protection practices are expected.
+
+Key Governance Concepts Embedded in This Regulation:
+- Necessity over convenience: collect and share the minimum data required, not
+  everything available.
+- Consent and awareness are not optional extras: data subjects should know how
+  their data is used, especially when AI and third parties are involved.
+- Automated decisions with real consequences for a person require a meaningful
+  human safeguard, not just a technical audit trail.

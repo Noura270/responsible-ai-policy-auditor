@@ -1,0 +1,72 @@
+id,evaluation_id,category,severity,likelihood,impact,risk_score,has_controls,justification,recommendation
+1,1,privacy_data_protection,High,4,4,16,0,"The system processes personal data to make fully automated loan decisions without any described human oversight or privacy safeguards. This creates a substantial risk of unlawful processing, lack of transparency, and potential discrimination, which could significantly affect data subjects.","1. Conduct a Data Protection Impact Assessment (DPIA) to evaluate privacy risks.
+2. Implement a human‑in‑the‑loop review for all loan decisions.
+3. Apply privacy‑enhancing techniques such as de‑identification and data minimisation.
+4. Establish clear transparency notices and a lawful basis for processing personal data.
+5. Enforce strict access controls and monitoring to prevent unauthorized data disclosure."
+2,1,human_oversight,High,3,4,12,0,"The system makes loan approval decisions automatically without any human review, exposing borrowers to potential errors or bias. Financial decisions have significant personal consequences, and the absence of oversight increases the chance of unjust outcomes. While the likelihood of a problematic decision is moderate, the impact of an incorrect denial or approval is high.","Introduce a meaningful human review step before final loan approval.
+Define and document oversight procedures that meet GDPR and EU AI Act requirements.
+Implement monitoring and audit trails to detect and correct erroneous decisions.
+Conduct bias and fairness testing on the model and adjust thresholds as needed.
+Provide clear communication to applicants about the role of automation and available appeal mechanisms."
+3,2,privacy_data_protection,High,4,4,16,0,"The system processes personal financial data to make loan decisions without any documented human oversight or transparency measures. Absence of stated safeguards increases the probability of privacy breaches and undermines data subjects' rights, potentially causing significant financial and reputational harm.","Implement a human‑in‑the‑loop review process for all automated loan decisions.
+Conduct a Data Protection Impact Assessment (DPIA) covering purpose limitation and minimization.
+Provide clear, accessible notices to applicants describing data use, legal basis, and their rights.
+Adopt privacy‑enhancing techniques such as de‑identification or aggregation where feasible.
+Establish documented governance procedures to monitor compliance with GDPR privacy principles."
+4,2,human_oversight,High,3,4,12,0,"The system makes fully automated loan decisions without any described human review, exposing borrowers to potentially erroneous approvals or denials. Errors in credit assessment can have severe financial consequences, and the absence of oversight increases the chance that such errors go unchecked.","Implement a meaningful human review step before final loan approval.
+Define clear escalation procedures for borderline or high‑value applications.
+Conduct regular audits of decision outcomes to detect systematic errors.
+Document and monitor compliance with applicable human‑oversight obligations.
+Provide training for staff responsible for overseeing the AI system."
+5,3,privacy_data_protection,High,3,4,12,0,"The system processes personal and sensitive health data and makes triage decisions without any described human oversight or transparency measures. This creates a notable risk of privacy violations, inaccurate prioritisation, and loss of patient trust. While the exact safeguards are unknown, the absence of documented controls heightens the potential impact of any breach or error.","1. Conduct a data protection impact assessment (DPIA) focusing on medical data and automated decision‑making.
+2. Establish a lawful basis for processing personal and special‑category health data, documenting consent or other justification.
+3. Implement transparent notices to patients describing how their data will be used and the role of the AI system.
+4. Introduce human‑in‑the‑loop review for triage decisions, especially for high‑severity cases.
+5. Apply privacy‑enhancing techniques (e.g., de‑identification, access controls) to minimise exposure of sensitive information."
+6,3,human_oversight,High,3,5,15,0,"The system makes fully automated triage decisions that directly affect patient care without any described human oversight. Absence of a human safeguard increases the chance that erroneous classifications could lead to inappropriate treatment priority, posing a serious safety risk.","Implement a real‑time human review step before final triage assignment.
+Define clear escalation criteria for cases where the AI confidence is low.
+Conduct regular validation studies to assess triage accuracy and adjust the model.
+Establish monitoring and audit logs to detect and correct misclassifications promptly.
+Document and train staff on the oversight workflow to ensure consistent application."
+7,4,human_oversight,Low,2,2,4,1,"The bot handles only low‑impact order‑status queries and escalates any complaint or refund request to a human, reducing the chance of adverse outcomes. Transparency is provided by informing users that they are interacting with an automated system. However, the limited oversight (only at escalation) leaves uncertainty about whether the oversight is sufficient for all potential errors.","1. Document a formal risk assessment that justifies the escalation‑only oversight model.
+2. Implement periodic random reviews of bot responses to verify accuracy.
+3. Define clear escalation criteria and response time targets for human operators.
+4. Maintain logs of escalated interactions for audit and continuous improvement."
+8,4,transparency_explainability,Low,2,2,4,1,"The system explicitly informs users that they are interacting with an automated bot, satisfying the EU AI Act disclosure requirement. No additional explainability information (e.g., reasons for a shipping status) is provided, which leaves a modest residual risk that users may not understand how outputs are generated. Overall, the transparency risk is limited but not fully mitigated.","1. Add brief explanations for how the shipping status is determined when responding to user queries.
+2. Document the system's decision logic in an internal technical dossier for audit purposes.
+3. Periodically review the disclosure message to ensure it remains clear and prominent.
+4. Provide a user-accessible FAQ that describes the bot's capabilities and limitations."
+9,5,privacy_data_protection,High,3,4,12,0,"The system processes personal and sensitive employee data to make automated performance assessments, with only escalation‑based human review. While the purpose is defined, the lack of explicit safeguards around purpose limitation, data minimisation, and robust oversight raises moderate privacy risk. Potential misuse or leakage could significantly affect employee privacy and trust.","1. Conduct a Data Protection Impact Assessment (DPIA) covering purpose limitation and data minimisation.
+2. Define and document a lawful basis for processing employee data, ensuring transparency to data subjects.
+3. Strengthen human oversight to allow pre‑decision review rather than only post‑escalation checks.
+4. Apply privacy‑enhancing techniques such as de‑identification or aggregation where feasible.
+5. Implement technical safeguards (access controls, encryption) for stored and transmitted employee data."
+10,5,human_oversight,High,3,4,12,1,"The system makes automated performance decisions that affect employees and only provides human review after escalation, which may be insufficient to catch errors or bias. While some oversight exists, the limited scope raises moderate likelihood of inadequate intervention and high potential impact on employment outcomes.","Define clear escalation criteria and enable human reviewers to intervene before decisions are finalized.
+Implement continuous monitoring and periodic bias audits of the performance model.
+Document a procedure for meaningful human review of each automated decision, not solely post‑escalation.
+Provide transparent communication to employees about the AI system and a process to contest decisions."
+11,6,privacy_data_protection,High,4,4,16,0,"The system processes precise GPS location data to deliver personalized marketing offers without any described safeguards or human review. Automated decisions that affect users are made solely by the AI, increasing the chance of privacy breaches and misuse of sensitive location information.","1. Conduct a privacy impact assessment to evaluate necessity and proportionality of using exact GPS data.
+2. Implement data minimization or anonymization techniques before processing location information.
+3. Obtain explicit, informed consent from users for location-based marketing.
+4. Introduce a human‑in‑the‑loop review for decisions that rely on personal location data.
+5. Provide clear transparency notices describing how location data is collected, used, and shared."
+12,6,human_oversight,Medium,3,3,9,0,"The system automatically generates personalized marketing offers based on precise GPS location without any described human review. This creates a moderate likelihood that users will be affected by decisions they cannot contest, and the impact includes privacy intrusion and potential regulatory penalties. Absence of oversight heightens the risk of misuse of sensitive location data. Overall, the human oversight gap represents a notable compliance and trust concern.","Implement a meaningful human review step before offers are sent.
+Conduct a risk assessment to determine the necessity of human oversight under GDPR and the EU AI Act.
+Document and enforce oversight procedures proportionate to the risk level.
+Provide users with clear information and an easy way to opt‑out of automated targeting.
+Establish monitoring to ensure oversight controls remain effective over time."
+13,6,data_governance_minimization,High,3,5,15,0,"The system processes precise GPS location data, which is highly sensitive, without any documented safeguards or justification for its necessity. The absence of minimization controls increases the probability of unnecessary data exposure and potential privacy violations.","1. Conduct a data minimization review to confirm that precise GPS data is strictly required for the marketing purpose.
+2. Limit the granularity of location data collected to the minimum needed (e.g., city‑level instead of exact coordinates).
+3. Establish a clear lawful basis and obtain explicit consent from users for location processing.
+4. Document and enforce purpose limitation and retention policies for the collected data.
+5. Perform a privacy impact assessment to identify and mitigate residual risks."
+14,7,privacy_data_protection,Medium,2,3,6,0,"The system processes employee job titles and completed courses, which are personal data but not highly sensitive. No explicit safeguards are described, creating a moderate risk that the data could be disclosed or misused. While data minimization is evident, the absence of a documented lawful basis and transparency measures raises privacy concerns.","1. Conduct a Data Protection Impact Assessment (DPIA) for the recommender system.
+2. Document and communicate the lawful basis for processing employee data.
+3. Implement technical safeguards such as encryption at rest and access controls.
+4. Provide clear privacy notices to employees describing data use and their rights.
+5. Establish monitoring to detect and prevent inadvertent PII leakage."
+15,8,human_oversight,Low,2,2,4,1,"The system includes a formal review of every forecasting decision, providing a strong human‑in‑the‑loop safeguard. Because no automated decisions directly affect users, the potential for adverse impact is limited, and the likelihood of oversight failure is low.","Document the decision‑review workflow and escalation criteria.
+Conduct periodic audits of the human oversight process to verify effectiveness.
+Provide training for the purchasing and warehouse team on interpreting and acting on forecast outputs.
+Maintain a log of reviewed decisions to support traceability and continuous improvement."

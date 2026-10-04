@@ -1,0 +1,9 @@
+id,timestamp,mode,content_type,reason,language,decision,risk_level,num_findings
+1,2026-09-23T15:50:31,system,Automated Loan Approval System,System evaluation,English,Violation,High,2
+2,2026-09-23T15:53:02,system,Automated Loan Approval System,System evaluation,English,Violation,High,2
+3,2026-09-27T13:31:31,system,ER Triage Assist,System evaluation,English,Violation,High,2
+4,2026-09-27T13:43:51,system,Order Status Bot,System evaluation,English,Needs Review,Low,2
+5,2026-09-27T14:08:46,system,Employee Performance Monitor,System evaluation,English,Needs Review,High,2
+6,2026-09-27T16:00:13,system,Local Offers Marketing Engine,System evaluation,English,Violation,High,3
+7,2026-09-27T16:39:48,system,Internal Learning Recommender,System evaluation,English,Needs Review,Medium,1
+8,2026-09-28T14:50:32,system,Warehouse Demand Forecaster,System evaluation,English,Needs Review,Low,1

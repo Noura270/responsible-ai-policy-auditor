@@ -1,0 +1,68 @@
+ISO/IEC 42001 - AI Management System (AIMS) - Summary of Key Requirement Areas
+
+This is an original, condensed summary of the general subject areas covered by
+ISO/IEC 42001, written for internal governance-assessment use. It is NOT a
+reproduction of the official standard text and should not be treated as a
+substitute for the licensed ISO/IEC 42001 document.
+
+1. Context of the Organization
+An organization implementing an AI Management System (AIMS) must understand
+its own context: its business objectives, the interested parties affected by
+its AI systems (employees, customers, regulators, the public), and the scope
+of AI systems covered by its governance program. Without a clearly defined
+scope, AI systems can be deployed without anyone being accountable for their
+governance.
+
+2. Leadership and AI Policy
+Top management must demonstrate visible commitment to responsible AI: a
+documented AI policy, clearly assigned roles and responsibilities for AI
+governance, and integration of AI risk considerations into overall business
+strategy. Leadership commitment prevents AI governance from being treated as
+a side task with no real ownership.
+
+3. Planning: AI Risk and Impact Assessment
+Organizations must have a systematic process to identify and evaluate risks
+and opportunities related to their AI systems. This includes assessing
+potential impacts on individuals and groups (bias, discrimination, safety,
+privacy) and setting measurable AI objectives. This is the foundation for
+any AI risk register: what could go wrong, how likely is it, and how severe
+would the impact be.
+
+4. Support: Resources, Competence, and Awareness
+The organization must ensure people involved in developing, deploying, or
+overseeing AI systems have the necessary competence and awareness of
+responsible AI principles. Documented information (policies, procedures,
+records of decisions) must be maintained and controlled so that governance
+activities are traceable, not just performed informally.
+
+5. Operation: Risk Treatment and Controls
+Once risks are identified, the organization selects and implements
+appropriate controls to treat them. Common control areas relevant to AI
+systems include: data quality and provenance, bias and fairness testing,
+system performance and robustness testing, transparency to affected users,
+and human oversight mechanisms proportionate to the risk of the system.
+Controls should be selected based on the specific risk profile of each AI
+system, not applied uniformly regardless of context.
+
+6. Performance Evaluation
+The organization must monitor, measure, and periodically audit its AI
+systems and its AIMS as a whole, and report findings to management. This
+includes ongoing monitoring after deployment, not just a one-time
+pre-launch assessment - AI systems can drift or behave differently as data
+and usage patterns change over time.
+
+7. Improvement
+When gaps, nonconformities, or incidents are identified, the organization
+must take corrective action and continually improve its AI governance
+practices. A single failed assessment should trigger a documented
+improvement action, not just be filed away.
+
+Key Governance Concepts Embedded in This Standard:
+- Accountability: every AI system should have a clearly assigned owner.
+- Risk-based approach: the depth of controls should match the severity and
+  likelihood of potential harm, not be one-size-fits-all.
+- Evidence-based assurance: claims of compliance or control implementation
+  should be supported by documented evidence, not just asserted.
+- Continuous governance: AI governance is an ongoing operating model, not a
+  one-time certification exercise - systems must be reassessed when they
+  change materially (new data sources, model updates, expanded use cases).

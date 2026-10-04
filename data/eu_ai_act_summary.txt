@@ -1,0 +1,52 @@
+EU AI Act - Summary of Key Principles for High-Risk AI Systems
+
+This is an original, condensed summary written for internal governance-assessment
+use. It is NOT a reproduction of the official legal text of Regulation (EU) 2024/1689
+and should not be treated as legal advice or a substitute for the official regulation.
+
+1. Risk-Based Classification
+The EU AI Act classifies AI systems into four tiers based on the risk they pose to
+people: Unacceptable risk (prohibited outright - e.g. social scoring of individuals,
+manipulative techniques), High-risk (subject to strict obligations - e.g. AI used in
+recruitment, credit scoring, education, law enforcement), Limited risk (transparency
+obligations only - e.g. chatbots must disclose they are AI), and Minimal risk (no
+specific obligations).
+
+2. Obligations for High-Risk AI Systems
+Providers and deployers of high-risk AI systems must maintain a risk management
+system throughout the system's lifecycle, ensure data governance practices for
+training data (relevance, representativeness, error checking), maintain technical
+documentation, enable automatic logging of events (traceability), and design the
+system for appropriate human oversight.
+
+3. Human Oversight
+High-risk AI systems must be designed so that natural persons can effectively
+oversee their operation, including the ability to understand system output, decide
+not to use the system in a particular situation, and intervene in or stop the
+system's operation.
+
+4. Transparency Obligations
+People must be informed when they are interacting with an AI system (unless obvious
+from context), and when AI-generated content could be mistaken for genuine human
+content, appropriate disclosure is required.
+
+5. Accountability Across the AI Value Chain
+Responsibility is distributed across providers (who build the system) and deployers
+(who put it into use) - deployers of high-risk systems have their own obligations,
+including using the system according to its instructions and monitoring its
+operation, not just relying on the provider's assurances.
+
+6. Third-Party and Vendor Considerations
+When an organization deploys an AI system built or provided by an external vendor,
+it does not automatically transfer away governance responsibility. Deployers are
+expected to understand the risk classification of vendor-provided systems and
+apply appropriate oversight measures.
+
+Key Governance Concepts Embedded in This Regulation:
+- Risk-proportionate obligations: the higher the potential harm, the stricter the
+  requirements - a minimal-risk chatbot is not held to the same standard as a
+  high-risk hiring tool.
+- Human agency is a design requirement, not an afterthought: oversight must be
+  built in, not bolted on.
+- Transparency is a baseline right for people interacting with AI, not an optional
+  courtesy.

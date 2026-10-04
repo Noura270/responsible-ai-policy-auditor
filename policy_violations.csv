@@ -1,0 +1,43 @@
+id,finding_id,policy,source,page,status,evidence
+1,1,Purpose limitation & data minimization,GDPR,1.0,,Contains personal data: Yes
+2,2,Meaningful human review for automated decisions,GDPR,1.0,,Human oversight on decisions: No
+3,2,Human oversight built into high‑risk AI system,EU_AI_ACT,1.0,,Human oversight on decisions: No
+4,2,Proportionate human oversight mechanisms,ISO42001,1.0,,Human oversight on decisions: No
+5,2,Human judgment in AI trustworthiness metrics,NIST,,,Human oversight on decisions: No
+6,3,Human oversight for automated decisions,GDPR,1.0,,Human oversight on decisions: No
+7,3,Data minimization / purpose limitation,GDPR,1.0,,Contains personal data: Yes
+8,3,Transparency and right to information,GDPR,1.0,,Makes automated decisions affecting users: Yes
+9,4,Meaningful human safeguard for automated decisions,GDPR,1.0,,Human oversight on decisions: No
+10,4,Human oversight must be built into high‑risk AI systems,EU_AI_ACT,1.0,,Makes automated decisions affecting users: Yes
+11,4,Proportionate human‑oversight mechanisms,ISO42001,1.0,,Makes automated decisions affecting users: Yes
+12,4,Human judgment required for AI trustworthiness metrics,NIST,1.0,,Makes automated decisions affecting users: Yes
+13,5,Lawful basis for personal data processing,GDPR,1.0,,Contains personal data: Yes
+14,5,Lawful basis for special category (sensitive) data,GDPR,1.0,,Contains sensitive data: Yes
+15,5,Transparency of automated decision‑making,GDPR,1.0,,Makes automated decisions affecting users: Yes
+16,6,Meaningful human review of automated decisions,GDPR,1.0,,Human oversight on decisions: No
+17,6,Human agency and built‑in oversight requirement,EU_AI_ACT,1.0,,Human oversight on decisions: No
+18,6,Proportionate human‑oversight mechanisms,ISO42001,1.0,,Human oversight on decisions: No
+19,6,Human judgment in AI trustworthiness metrics,NIST,,,Human oversight on decisions: No
+20,7,Automated decision safeguard,GDPR,1.0,,Makes automated decisions affecting users: No
+21,7,Transparency of AI interaction,EU_AI_ACT,1.0,,النظام يوضح للمستخدم في بداية كل محادثة أنه روبوت محادثة آلي وليس موظف بشري
+22,7,Human oversight adequacy,EU_AI_ACT,1.0,,Human oversight on decisions: Yes
+23,7,Proportionate human oversight,ISO42001,1.0,,Human oversight type: مراجعة عند التصعيد فقط
+24,8,User disclosure of AI interaction,EU_AI_ACT,1.0,,النظام يوضح للمستخدم في بداية كل محادثة أنه روبوت محادثة آلي وليس موظف بشري
+25,9,Purpose Limitation,GDPR,1.0,,Intended purpose: تقييم أداء الموظفين بناءً على مؤشرات نشاط رقمية. يتفاعل مع نظام الموارد البشرية
+26,9,Data Minimization,GDPR,1.0,,Data Used: عدد ساعات تسجيل الدخول، معدل الاستجابة على الرسائل
+27,9,Human Oversight for Automated Decisions,GDPR,1.0,,Human oversight type: مراجعة عند التصعيد فقط
+28,10,Meaningful human review of automated decisions,GDPR,1.0,,Human oversight on decisions: Yes
+29,10,Human agency built-in oversight,EU_AI_ACT,1.0,,Human oversight type: مراجعة عند التصعيد فقط
+30,10,Proportionate human oversight mechanisms,ISO42001,1.0,,Human oversight type: مراجعة عند التصعيد فقط
+31,11,Human oversight for automated decisions,GDPR,1.0,,Human oversight on decisions: No
+32,11,Purpose limitation / data minimization,GDPR,1.0,,Data Used: الموقع الجغرافي الدقيق (GPS) للمستخدم
+33,12,Meaningful human review (GDPR Art.22),GDPR,1.0,,Human oversight on decisions: No | Makes automated decisions affecting users: Yes
+34,12,Human oversight requirement (EU AI Act),EU_AI_ACT,1.0,,Human oversight on decisions: No
+35,12,Human oversight mechanisms (ISO 42001),ISO42001,1.0,,Human oversight on decisions: No
+36,12,Human judgment in AI trustworthiness (NIST),NIST,0.0,,Human oversight on decisions: No
+37,13,Data minimization (collect only necessary data),GDPR,1.0,,Data Used: الموقع الجغرافي الدقيق (GPS) للمستخدم
+38,14,Data minimization,GDPR,1.0,,Data Used: المسمى الوظيفي، والدورات المكتملة سابقًا فقط.
+39,14,Lawful basis for processing personal data,GDPR,1.0,,Contains personal data: Yes
+40,15,Human oversight must be built in,EU_AI_ACT,1.0,,Human oversight type: مراجعة كل قرار
+41,15,Meaningful human review of automated decisions,GDPR,1.0,,Makes automated decisions affecting users: No
+42,15,Human oversight mechanisms proportionate to risk,ISO42001,1.0,,Human oversight type: مراجعة كل قرار
