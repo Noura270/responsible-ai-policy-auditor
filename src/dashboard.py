@@ -3,7 +3,25 @@ import plotly.express as px
 import pandas as pd
 from db import get_dashboard_data
 
-MIN_ROWS_FOR_CHART = 4  # الحد الأدنى لعرض chart بصري بدل رقم خام
+MIN_ROWS_FOR_CHART = 4  # الحد الأدنى لعرض chart بدل رقم خام
+
+DECISION_COLORS = {
+    "Violation": "#E5484D",
+    "Needs Review": "#F2994A",
+    "Compliant": "#30A46C",
+    "Partially Compliant": "#3E63DD",
+}
+RISK_COLORS = {
+    "Low": "#30A46C",
+    "Medium": "#F2C94C",
+    "High": "#F2994A",
+    "Critical": "#E5484D",
+}
+STATUS_COLORS = {
+    "Compliant": "#30A46C",
+    "Evidence Required": "#F2C94C",
+    "Non-Compliant": "#E5484D",
+}
 
 
 def render_dashboard():
@@ -43,6 +61,7 @@ def render_dashboard():
         column="decision",
         title="Decision Distribution",
         chart_type="donut",
+        color_map=DECISION_COLORS,
     )
 
     # ---------- Risk Level Distribution ----------
@@ -52,6 +71,7 @@ def render_dashboard():
         title="Risk Level Distribution",
         chart_type="bar",
         category_order=["Low", "Medium", "High", "Critical"],
+        color_map=RISK_COLORS,
     )
 
     # ---------- Findings by Risk Category ----------
@@ -68,6 +88,8 @@ def render_dashboard():
         fig = px.bar(
             grouped, x="source", y="count", color="status",
             title="Compliance Status across Frameworks", barmode="stack",
+            color_discrete_map=STATUS_COLORS,
+            category_orders={"status": ["Compliant", "Evidence Required", "Non-Compliant"]},
         )
         st.plotly_chart(fig, use_container_width=True)
         st.caption(f"Based on {len(policy_violations)} policy assessments.")
@@ -76,7 +98,7 @@ def render_dashboard():
         st.write(f"Not enough data yet ({len(policy_violations)} policy assessments recorded).")
 
 
-def _render_categorical_chart(df, column, title, chart_type="bar", category_order=None):
+def _render_categorical_chart(df, column, title, chart_type="bar", category_order=None, color_map=None):
     st.subheader(title)
     if column not in df.columns or df.empty:
         st.write("Not enough data yet.")
@@ -90,15 +112,28 @@ def _render_categorical_chart(df, column, title, chart_type="bar", category_orde
         st.table(counts)
         return
 
+    max_count = counts["count"].max()
+
     if chart_type == "donut":
-        fig = px.pie(counts, names=column, values="count", hole=0.5)
+        fig = px.pie(
+            counts, names=column, values="count", hole=0.5,
+            color=column, color_discrete_map=color_map,
+        )
     elif chart_type == "hbar":
         fig = px.bar(counts, x="count", y=column, orientation="h")
+        fig.update_yaxes(categoryorder="total ascending")
+        if max_count <= 10:
+            fig.update_xaxes(dtick=1)
     else:
-        if category_order:
-            fig = px.bar(counts, x=column, y="count", category_orders={column: category_order})
-        else:
-            fig = px.bar(counts, x=column, y="count")
+        fig = px.bar(
+            counts, x=column, y="count",
+            color=column if color_map else None,
+            color_discrete_map=color_map,
+            category_orders={column: category_order} if category_order else None,
+        )
+        fig.update_layout(showlegend=False)
+        if max_count <= 10:
+            fig.update_yaxes(dtick=1)
 
     fig.update_layout(title=title)
     st.plotly_chart(fig, use_container_width=True)

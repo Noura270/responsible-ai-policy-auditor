@@ -20,7 +20,9 @@ def init_db():
             language TEXT,
             decision TEXT,
             risk_level TEXT,
-            num_findings INTEGER
+            num_findings INTEGER,
+            system_id INTEGER,
+            FOREIGN KEY (system_id) REFERENCES systems(id)
         )
     """)
 
@@ -53,8 +55,38 @@ def init_db():
         )
     """)
 
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS systems (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL UNIQUE,
+            created_at TEXT NOT NULL
+        )
+    """)
+
     conn.commit()
     conn.close()
+
+
+def get_or_create_system(name):
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT id FROM systems WHERE name = ?", (name,))
+    row = cursor.fetchone()
+
+    if row:
+        system_id = row[0]
+    else:
+        timestamp = datetime.now().isoformat(timespec="seconds")
+        cursor.execute(
+            "INSERT INTO systems (name, created_at) VALUES (?, ?)",
+            (name, timestamp)
+        )
+        system_id = cursor.lastrowid
+        conn.commit()
+
+    conn.close()
+    return system_id
 
 
 def log_evaluation(result, mode="content", content_type="", reason="", language="Arabic"):
@@ -64,8 +96,12 @@ def log_evaluation(result, mode="content", content_type="", reason="", language=
     timestamp = datetime.now().isoformat(timespec="seconds")
     findings = result.get("findings", [])
 
+    system_id = None
+    if mode == "system" and content_type.strip():
+        system_id = get_or_create_system(content_type.strip())
+
     cursor.execute(
-        "INSERT INTO evaluations (timestamp, mode, content_type, reason, language, decision, risk_level, num_findings) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+        "INSERT INTO evaluations (timestamp, mode, content_type, reason, language, decision, risk_level, num_findings, system_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
         (
             timestamp,
             mode,
@@ -74,7 +110,8 @@ def log_evaluation(result, mode="content", content_type="", reason="", language=
             language,
             result.get("decision", ""),
             result.get("risk_level", ""),
-            len(findings)
+            len(findings),
+            system_id
         )
     )
 
@@ -106,7 +143,7 @@ def log_evaluation(result, mode="content", content_type="", reason="", language=
                     violation.get("policy", ""),
                     violation.get("source", ""),
                     violation.get("page"),
-                    violation.get("compliance_status", ""),
+                    violation.get("compliance_status", ""),  # المفتاح الصح اللي بيرجعه الـ evaluator
                     " | ".join(violation.get("evidence", []))
                 )
             )
